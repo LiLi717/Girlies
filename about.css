@@ -1,0 +1,801 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    flex-direction: column; /* Change from row to column to stack sections vertically */
+    height: 100vh;
+    overflow-y: auto; /* Enables vertical scrolling */
+    scroll-snap-type: y mandatory; /* Snap to each section when scrolling vertically */
+}
+section {
+    scroll-snap-align: start; /* Each section snaps at the start */
+    min-height: 100vh; /* Full viewport height for each section */
+    width: 100vw; /* Full viewport width */
+}
+
+/* Optional styling to hide the scrollbar */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* إعدادات الخلفية للفيديو */
+.background-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* خلف الفيديو */
+}
+
+.about-hero-section {
+    position: relative;
+    height: 100vh; /* التأكد من أن القسم يغطي الشاشة بالكامل */
+    width: 100vw; /* التأكد من تغطية العرض الكامل للشاشة */
+    overflow: hidden;
+    margin: 0;
+}
+
+/* الخلفية السوداء الشفافة */
+.overlay {
+    position: absolute; /* تجعل الخلفية فوق المحتوى */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* تمتد من الأعلى إلى الأسفل */
+    background-color: rgba(0, 0, 0, 0.6); /* خلفية سوداء شفافة */
+    z-index: 1; /* تأكد من أن الخلفية فوق الفيديو */
+}
+
+.about-hero-text-wrapper {
+    position: relative;
+    z-index: 2; /* تأكد من أن النص فوق الخلفية */
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%); 
+    margin-top: 30px; /* المسافة المضافة */
+}
+
+.values-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #f1e5d3;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.right-image {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Styling */
+.our-values-text-wrapper {
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+h1 {
+    font-size: 65px;
+    font-weight: bold;
+    margin: 0;
+    color: #e2f0dd;
+    margin-top: 20px; /* إضافة مساحة فوق العنوان */
+    font-family: 'Alegreya Sans', sans-serif; /* استخدام الخط */
+}
+
+h3.h2 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #e2f0dd;
+    margin-top: 18px; /* إضافة مساحة فوق الفقرة */
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* .paragraph {
+    font-size: 1.1em;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 700px;
+} */
+
+/*maliis code*/
+
+.secondary-btn {
+    display: inline-block;
+    padding: 8px 15px; /* زيادة الحشو لزيادة الحجم */
+    color: #fff;
+    background-color: #3f7b54;
+    border-radius: 7px;
+    font-size: 22px; /* تكبير حجم الخط */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 13px;
+    font-family: 'DM Serif Display', sans-serif;
+    font-weight: 500;
+}
+
+.secondary-btn:hover {
+    background-color: #9ec99c;
+}
+
+/* إعدادات الروابط في الأعلى */
+.top-bar {
+    display: flex;
+    justify-content: space-between; /* توزع العناصر بين اليسار واليمين */
+    align-items: center;
+    padding: 22px; /* زيادة الحشو */
+    color: white; /* لون النص أبيض */
+    position: absolute; /* تأمين الموقع */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* تأكد من أن الروابط فوق الخلفية */
+    background-color: transparent; /* خلفية شفافة */
+}
+
+.site-name {
+    font-size: 28px; /* حجم خط اسم الموقع */
+    color: white; /* لون اسم الموقع */
+    margin-left: 20px; /* مسافة عن الجهة اليسرى */
+    font-family: 'DM Serif Display', sans-serif; 
+}
+
+.top-links {
+    display: flex;
+    justify-content: flex-end; /* لجعل الروابط في الجهة اليمنى */
+    margin-right: 30px;
+}
+
+.top-links a {
+    color: white; /* لون النص أبيض */
+    margin: 0 20px; /* مساحة بين الروابط */
+    text-decoration: none;
+    font-size: 19.5px; /* حجم خط أكبر */
+    font-family: 'DM Serif Display', sans-serif; /* تطبيق الخط هنا */
+    transition: color 0.3s ease; /* تأثير الانتقال لتغيير اللون */
+}
+
+.top-links a:hover {
+    color: #9ec99c; /* تغيير اللون عند تمرير الماوس */
+}
+
+.top-links a.active {
+    color: #9ec99c; /* لون مختلف للرابط النشط */
+}
+
+/* خط الفصل */
+.divider {
+    height: 0.5px; /* سمك الخط أكثر نحافة */
+    background-color: rgba(169, 169, 169, 0.5); /* لون رمادي شفاف */
+    width: 100%; /* يمتد عرضيًا بالكامل */
+    position: absolute; /* لتثبيته في الموقع */
+    top: 80px; /* انزاله بمقدار 2 بكسل */
+    z-index: 10; /* فوق الخلفية ولكن تحت النص */
+}
+
+/*remans code/
+
+/* Accordion Wrapper */
+.approach-accordion-wrapper {
+    width: 100%;
+}
+
+/* Accordion Block */
+.accordion-block {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accordion-block.open .accordion-para-wrapper {
+    max-height: 200px; /* Control maximum height of open section */
+    padding: 15px 20px;
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Accordion Row */
+.accordion-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.accordion-row:hover {
+    background-color: #f0f0f0;
+}
+
+.accordion-row-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.checkmark {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Toggle Icon */
+.toggle-icon {
+    font-size: 1.2em;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.accordion-block.open .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Accordion Paragraph Wrapper */
+.accordion-para-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    border-top: 1px solid #e0e0e0;
+    transition: max-height 0.3s ease;
+}
+
+.small-paragraph {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/*about as sec malii */
+
+body {
+    background-color: #fbfff8; /* Light background for a clean look */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة الحشو الافتراضي */
+    height: 200vh; /* لزيادة ارتفاع الصفحة لتجربة التمرير */
+}
+.about-us-section {
+    padding: 150px 65px 50px; /* حشو من الأعلى واليسار واليمين والأسفل */
+}
+
+.about-us-container {
+    display: flex; /* استخدام الفليكس لتخطيط العناصر */
+    justify-content: space-between; /* مسافة بين العناصر */
+    align-items: flex-start; /* محاذاة العناصر إلى الأعلى */
+    gap: 40px; /* مساحة بين العناصر */
+}
+
+.about-us-image-wrapper {
+    flex: 1; /* السماح لعنصر الصورة بالنمو */
+    opacity: 0; /* بدءًا من الشفافية */
+    transform: translateY(20px); /* بدءًا من الأسفل */
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out; /* إضافة انتقالات */
+}
+
+.about-us-image-wrapper.visible {
+    opacity: 1; /* زيادة الشفافية */
+    transform: translateY(0); /* التحريك إلى الموقع الأصلي */
+}
+
+.about-us-image {
+    width: 90%; /* عرض كامل */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 7px; /* زوايا مستديرة عامة */
+    border-bottom-right-radius: 200px; /* قص الزاوية اليمنى السفلية */
+}
+
+.about-us-text-wrapper {
+    flex: 1; /* السماح لعنصر النص بالنمو */
+    display: flex; /* استخدام الفليكس */
+    flex-direction: column; /* تخطيط عمودي */
+    align-items: flex-start; /* محاذاة العناصر إلى البداية */
+    gap: 8px; /* مساحة بين العناصر */
+    position: relative; /* لجعل النص يتحرك داخل الحاوية */
+    opacity: 0; /* بدءًا من الشفافية */
+    transform: translateX(100px); /* بدءًا من الجهة اليمنى */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* إضافة انتقالات */
+}
+
+.about-us-text-wrapper.visible {
+    opacity: 1; /* زيادة الشفافية */
+    transform: translateX(0); /* التحريك إلى الموقع الأصلي */
+}
+
+.about-us-text-wrapper h2 {
+    color: #142200; /* لون عنوان h2 */
+    font-size: 3.55rem; /* حجم h2 */
+    margin: 0 0 20px 0; /* الهوامش السفلية */
+    font-family: 'Cabinetgrotesk Variable', sans-serif; /* خط مخصص */
+}
+
+.about-us-text-wrapper p {
+    color: #575b52; /* لون نص الفقرة */
+    font-size: 1.29rem; /* حجم نص الفقرة */
+    margin: 0 0 20px 0; /* الهوامش السفلية */
+    font-family: 'Trebuchet MS', sans-serif; /* خط آخر للفقرة */
+    letter-spacing: 0.05em; /* المسافة بين الحروف */
+    line-height: 1.6; /* ارتفاع السطر */
+    font-weight: normal; /* لإزالة خاصية الـ bold */
+}
+
+.about-text-images-blocks-wrapper {
+    display: flex; /* تخطيط فليكس للصور */
+    gap: 10px; /* مساحة بين كتل الصور */
+    margin-top: 20px; /* مسافة فوق الصور */
+}
+
+.about-text-image-block {
+    flex: 1; /* السماح لكتلة الصورة بالنمو */
+    opacity: 0; /* بدءًا من الشفافية */
+    transform: translateY(20px); /* بدءًا من الأسفل */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* إضافة انتقالات */
+}
+
+.about-text-image-block.visible {
+    opacity: 1; /* زيادة الشفافية */
+    transform: translateY(0); /* التحريك إلى الموقع الأصلي */
+}
+
+.about-text-image {
+    width: 90%; /* تصغير الصورة إلى 80% من الحاوية */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 33px; /* زوايا مستديرة أكثر */
+    display: block; /* التأكد من أن الصورة لا تتداخل مع العناصر الأخرى */
+    margin: 0 auto; /* محاذاة الصور إلى الوسط */
+}
+
+/*remans headers */
+
+.header {
+    background-color: rgb(58, 116, 58);;
+    color: #e0e1d3;
+    text-align: center;
+    padding: 3em;
+    }
+    
+    .header h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+    color: #ffffff;
+    }
+    
+    .header p {
+    font-size: 1.2em;
+    margin: 0.5em 0 0;
+    color: #ffffff;
+    }
+
+    /*remans  Testimonials Section */
+    .testimonials-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 3em 1em;
+        }
+        
+        .testimonial-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        margin: 1.5em;
+        padding: 2em;
+        text-align: center;
+        width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        }
+        
+        .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /*malii store */
+
+        .story-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .story-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .story-wrapper {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .story-heading-text-wrapper,
+        .founder-quote-wrapper {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .story-heading-text-wrapper.visible,
+        .founder-quote-wrapper.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .story-heading-text-wrapper h3 {
+            font-size: 3.8rem;
+            color: #142200;
+            margin: 0;
+        }
+
+        .story-heading-text-wrapper p {
+            font-size: 1.3rem;
+            color: #575b52;
+            line-height: 1.6;
+            font-weight: normal; /* لإزالة خاصية الـ bold */
+        }
+
+        .story-image-wrapper,
+        .founder-video-wrapper {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            max-width: 400px; /* حجم الصورة والفيديو */
+            width: 100%; /* تأكد من أن الصورة والفيديو يأخذان عرض الحاوية */
+        }
+
+        .story-image-wrapper.visible,
+        .founder-video-wrapper.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .story-image {
+            width: 130%; /* ملء العرض بالكامل داخل الحاوية */
+            border-radius: 15px; /* شكل الزوايا */
+            margin-left: 10%; /* انزلاق الصورة إلى اليمين */
+        }
+
+        .founder-video {
+            width: 125%; /* ملء العرض بالكامل داخل الحاوية */
+            border-radius: 15px; /* شكل الزوايا */
+            margin-top: 20px; /* انزلاق الفيديو إلى الأسفل */
+            margin-left: 0%; /* انزلاق الفيديو إلى اليمين */
+        }
+
+        /*all maliis code*/
+        
+        .founder-quote-wrapper {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .founder-quote-wrapper.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .founder-quote-wrapper p {
+            font-size: 1.3rem;
+            color: #2c8c4d;
+            font-style: italic;
+            margin-left: 11%;
+            font-weight: normal; /* لإزالة خاصية الـ bold */
+        }
+
+        .line {
+            width: 50px;
+            height: 2px;
+            background-color: #2c8c4d;
+            margin: 15px 0;
+            margin-left: 10%;
+        }
+
+        .upper-heading {
+            font-size: 1.2rem;
+            color: #575b52;
+            margin-left: 10%;
+        }
+
+        
+
+    /* إعدادات الفوتر */
+    .footer-section {
+            background-color: #d0e8d2; /* لون أخضر فاتح مريح */
+            color: #333; /* لون نص داكن لسهولة القراءة */
+            padding: 40px 0;
+            text-align: center;
+            width: 100%; /* يغطي العرض بالكامل */
+            position: relative; /* للتأكد من أن الفوتر في موضعه */
+            z-index: 5; /* تأكد من أن الفوتر فوق الخلفية */
+        }
+
+        .footer-link {
+            color: #333; /* لون نص داكن لسهولة القراءة */
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+
+        body {
+            margin: 0; /* إزالة الهوامش الافتراضية */
+            padding: 0; /* إزالة الحشو الافتراضي */
+            font-family: 'Cabinetgrotesk Variable', sans-serif;
+        }
+
+        /* خلفية القسم الخاص بنا (About Us) */
+        .about-us-section {
+            background-color: #eefbd9; /* خلفية القسم */
+            padding: 150px 65px 50px; /* حشو من الأعلى واليسار واليمين والأسفل */
+            padding-bottom: 100px;
+        }
+
+        /* خلفية قسم القصة (Story) */
+        .story-section {
+            background-color: #fbfff8; /* لون الخلفية لقسم القصة */
+            padding: 150px 65px 50px;
+            max-width: 2000px;
+            padding-bottom: 100px;
+        }
+
+
+        /* خلفية الفوتر */
+        .footer-section {
+            background-color: #d0e8d2; /* لون أخضر فاتح مريح */
+            color: #333; /* لون نص داكن لسهولة القراءة */
+            padding: 40px 0;
+            text-align: center;
+            width: 100%; /* يغطي العرض بالكامل */
+            position: relative; /* للتأكد من أن الفوتر في موضعه */
+            z-index: 5; /* تأكد من أن الفوتر فوق الخلفية */
+        }
+
+        /* زر الرجوع إلى الأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50; /* لون خلفية الزر */
+            color: white; /* لون النص */
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.5s ease, opacity 0.3s ease, visibility 0.3s ease; /* إضافة انتقال للألوان ولإظهار الزر */
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000; /* تأكد من أن الزر فوق العناصر الأخرى */
+        }
+
+        /* يظهر الزر عند إضافة الفئة show */
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* رابط الزر */
+        .back-to-top a {
+            color: white; /* لون النص داخل الرابط */
+            text-decoration: none;
+        }
+
+        /* تغيير اللون عند التحويم */
+        .back-to-top:hover {
+            background-color: #3f7b54; /* تغيير لون الخلفية عند المرور */
+        }
+
+        /* جعل الزر يظهر عند التمرير */
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /*all remans code*/
+        /* إعدادات صورة العميل في قسم "العملاء السعداء" */
+.customer-photo {
+    border-radius: 50%; /* يجعل الصورة دائرية */
+    height: 90px; /* ارتفاع الصورة */
+    width: 90px; /* عرض الصورة */
+    margin-bottom: 1em; /* مسافة بين الصورة والعناصر أسفلها */
+}
+
+/* إعدادات عنوان البطاقة في قسم التقييمات */
+.testimonial-card h3 {
+    font-size: 1.3em; /* حجم النص */
+    color: #1a1a2e; /* لون النص */
+    margin: 0.5em 0; /* مسافة بين النص والعناصر المحيطة */
+}
+
+/* إعدادات النص في قسم التعليقات */
+.feedback {
+    font-size: 1em; /* حجم النص */
+    color: #555; /* لون النص */
+    line-height: 1.6; /* ارتفاع السطر لسهولة القراءة */
+}
+
+/* قسم التذييل (footer) */
+.footer {
+    background-color: #9dd69f; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    padding: 2em 1em; /* مساحة حول المحتوى */
+    text-align: center; /* توسيط النص */
+}
+
+.footer p {
+    font-size: 1.3em; /* حجم النص */
+    margin: 0 0 0.5em; /* مسافة بين الفقرات */
+}
+
+/* زر الدعوة إلى الإجراء */
+.cta-button {
+    background-color: #e84545; /* لون الخلفية */
+    border: none; /* إزالة الحدود */
+    border-radius: 8px; /* زوايا مستديرة للزر */
+    color: #fff; /* لون النص */
+    cursor: pointer; /* يظهر المؤشر على شكل يد عند التمرير */
+    font-size: 1em; /* حجم النص */
+    padding: 0.8em 1.6em; /* مساحة حول النص داخل الزر */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير الانتقال عند التفاعل */
+}
+
+/* تأثير عند التمرير فوق الزر */
+.cta-button:hover {
+    background-color: #d13030; /* لون خلفية جديد */
+    transform: scale(1.05); /* تكبير الزر قليلاً */
+}
+
+/* إعادة ضبط عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* لضمان حساب مساحة العناصر بشكل صحيح */
+}
+
+/* إعدادات النص والجسم */
+body {
+    font-family: Arial, sans-serif; /* نوع الخط */
+    background-color: #ddd5bd67; /* لون خلفية خفيف */
+    color: #ffffff; /* لون النص */
+}
+
+/* قسم العنوان */
+.header {
+    text-align: center; /* توسيط المحتوى */
+    background-color: rgb(142, 188, 129); /* لون أخضر صحي */
+    color: #ffffff; /* لون النص */
+    padding: 2.5rem 1rem; /* مساحة حول المحتوى */
+}
+
+.header h1 {
+    font-size: 2.5rem; /* حجم النص */
+}
+
+.header p {
+    font-size: 1.2rem; /* حجم النص */
+    font-style: italic; /* نص مائل */
+    margin-top: 0.5rem; /* مسافة أعلى الفقرة */
+}
+
+/* قسم "لماذا نحن" */
+.why-us {
+    display: flex;
+    flex-wrap: wrap; /* يسمح بتفاف العناصر في الأسطر الجديدة */
+    justify-content: space-around; /* توزيع العناصر بالتساوي */
+    padding: 3rem 1rem; /* مساحة حول المحتوى */
+    gap: 1.5rem; /* مسافة بين العناصر */
+}
+
+.why-item {
+    background: #fff; /* لون خلفية أبيض */
+    border: 2px solid #28a745; /* إطار أخضر */
+    border-radius: 8px; /* زوايا مستديرة */
+    padding: 1.5rem; /* مساحة داخلية */
+    width: 220px; /* عرض العنصر */
+    text-align: center; /* توسيط المحتوى */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير الانتقال عند التفاعل */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف حول العنصر */
+}
+
+.why-item:hover {
+    transform: scale(1.05); /* تكبير العنصر قليلاً */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
+}
+
+.why-item img {
+    width: 80px; /* عرض الصورة */
+    height: 80px; /* ارتفاع الصورة */
+    margin-bottom: 1rem; /* مسافة أسفل الصورة */
+}
+
+.why-item h2 {
+    font-size: 1.5rem; /* حجم النص */
+    color: #28a745; /* لون النص */
+    margin-bottom: 0.5rem; /* مسافة أسفل العنوان */
+}
+
+.why-item p {
+    font-size: 1rem; /* حجم النص */
+    color: #666; /* لون النص */
+    line-height: 1.5; /* ارتفاع السطر لسهولة القراءة */
+}
+
+/* قسم الدعوة إلى الإجراء */
+.cta {
+    text-align: center; /* توسيط المحتوى */
+    margin: 2.5rem; /* مسافة حول القسم */
+}
+
+.cta button {
+    background-color: #ffcc00; /* لون الخلفية */
+    color: #333; /* لون النص */
+    padding: 1rem 2.5rem; /* مساحة حول النص داخل الزر */
+    font-size: 1.2rem; /* حجم النص */
+    border: none; /* إزالة الحدود */
+    border-radius: 8px; /* زوايا مستديرة */
+    cursor: pointer; /* يظهر المؤشر على شكل يد عند التمرير */
+    transition: background-color 0.3s ease; /* تأثير الانتقال عند التفاعل */
+}
+
+.cta button:hover {
+    background-color: #e0b700; /* لون خلفية جديد */
+}
+
+/* إعدادات التذييل */
+.footer {
+    text-align: center; /* توسيط المحتوى */
+    background-color: #333; /* لون خلفية داكن */
+    color: #fff; /* لون النص */
+    padding: 1rem 0; /* مساحة حول التذييل */
+    font-size: 0.9rem; /* حجم النص */
+}
+
+/* إعادة ضبط عامة أخرى */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* لضمان حساب مساحة العناصر بشكل صحيح */
+}
