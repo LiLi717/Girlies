@@ -1,0 +1,267 @@
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8f5e9; /* Very light green background */
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Main Container */
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  /* Menu Heading */
+  .menu-heading-wrapper h2 {
+    font-size: 42px;
+    color: #2e7d32; /* Darker green */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .menu-heading-wrapper p {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 50px;
+  }
+  
+  /* Menu Tab Content */
+  .menu-tab-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  /* Menu Tab Blocks */
+  .menu-tab-block {
+    background-color: #ffffff;
+    border: 2px solid #a5d6a7; /* Soft green border */
+    border-radius: 15px;
+    padding: 20px;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .menu-tab-block:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Menu Block Left */
+  .menu-tab-block-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-tab-block-image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 20px;
+    border: 3px solid #c8e6c9; /* Lighter green border around images */
+  }
+  
+  /* Text inside each block */
+  .menu-tab-block-text .paragraph-big {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e7d32; /* Darker green for dish names */
+  }
+  
+  .menu-tab-block-text .small-paragraph {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  /* Menu Price */
+  .menu-price-wrapper .small-paragraph {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b5e20; /* Darker green for prices */
+  }
+  
+  /* Decorative Image */
+  .menu-tab-details-image-decorative {
+    display: none; /* Hidden for a cleaner look */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu-tab-block {
+        width: 100%;
+    }
+  }
+  /* Menu Tab Content */
+  .menu-tab-content-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    gap: 40px;
+  }
+  
+  /* Menu Tab Blocks */
+  .menu-tab-block {
+    background-color: #ffffff;
+    border: 2px solid #a5d6a7;
+    border-radius: 15px;
+    padding: 20px;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: auto; /* Push items to the right */
+  }
+  /* General Flexbox Layout for Menu Section */
+  .menu-tab-content-wrapper {
+    display: flex;
+    justify-content: space-between; /* Space between image/text and the menu items */
+    align-items: flex-start; /* Align items to the top */
+    gap: 40px;
+  }
+  
+  /* Image and Text Section on the Left */
+  .menu-tab-details-wrappper {
+    width: 45%; /* Make the left section take 45% of the width */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+  }
+  
+  /* Image Styling */
+  .menu-tab-details-image-wrapper {
+    margin-bottom: 20px; /* Adds space between image and text */
+  }
+  
+  .menu-tab-details-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Rounded corners for the image */
+  }
+  
+  /* Text Styling */
+  .menu-tab-details-wrappper h3 {
+    font-size: 28px;
+    color: #2e7d32; /* Dark green */
+    margin-bottom: 10px;
+  }
+  
+  .menu-tab-details-wrappper p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Menu Items Section on the Right */
+  .menu-tab-blocks-wrapper {
+    width: 45%; /* Make the right section take 45% of the width */
+  }
+  
+  .menu-tab-block {
+    background-color: #ffffff;
+    border: 2px solid #a5d6a7;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .menu-tab-block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu-tab-content-wrapper {
+        flex-direction: column;
+    }
+  
+    .menu-tab-details-wrappper,
+    .menu-tab-blocks-wrapper {
+        width: 100%; /* Full width for both sections on smaller screens */
+    }
+  }
+  /* Menu Tab Blocks (Meals) */
+  .menu-tab-block {
+    background-color: #ffffff;
+    border: 2px solid #a5d6a7;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%; /* Make each block full width */
+    height: 120px; /* Set a fixed height to give a rectangular shape */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  /* Hover Effect */
+  .menu-tab-block:hover {
+    transform: translateY(-5px); /* Slightly lift the card */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+  
+  /* Image on the Left of the Block */
+  .menu-tab-block-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .menu-tab-block-image {
+    width: 90px; /* Fixed width for the image */
+    height: 90px; /* Fixed height for the image */
+    object-fit: cover; /* Make sure the image fits well */
+    border-radius: 12px; /* Rounded corners */
+    margin-right: 20px; /* Space between the image and text */ 
+  }
+  
+  
+  
+  /* Text inside each Block */
+  .menu-tab-block-text .paragraph-big {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e7d32; /* Darker green for the dish name */
+  }
+  
+  .menu-tab-block-text .small-paragraph {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    max-width: 300px; /* Limit width of text to keep everything aligned */
+  }
+  
+  /* Menu Price */
+  .menu-price-wrapper .small-paragraph {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b5e20; /* Darker green for prices */
+  }
+  p{font-family:'Times New Roman', Times, serif;
+    
+  }
+  
+  
+  .menu-tab-details-image-wrapper img:hover {
+    transform: scale(1.05); /* تكبير الصورة عند تمرير الفأرة */
+  }
+  
+  image{
+    border: 2px solid black;
+  }
